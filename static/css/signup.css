@@ -28,7 +28,7 @@ header{
     display: inline-block;
     float: right;
 }
-header #navbar-list li {
+#navbar-list li {
     padding: 16px;
     
     display: inline;
@@ -36,7 +36,7 @@ header #navbar-list li {
     font-size: 20px;
 }
 
-header #navbar-list li:hover{
+#navbar-list li:hover{
     padding: 16px;
     border-bottom: 1px rgb(202, 227, 248) solid;
     display: inline;
@@ -67,8 +67,7 @@ header #navbar-list li:hover{
     background-size: cover;
     /* background-position: center; */
 }
-
-#login-box{
+#signup-form{
     margin-top:250px;
     position: absolute;
     margin-left:38%;
@@ -99,7 +98,7 @@ input{
     padding: 16px;
     border-radius: 30px;
 }
-#login-button{
+#signup-button{
     padding: 8px 24px;
     border-radius: 40px;
     background:rgb(27, 66, 236);
@@ -108,7 +107,7 @@ input{
     margin: 20px;
     margin-left: 40%;
 }
-#login-button:hover{
+#signup-button:hover{
 background:rgba(12, 12, 243,0.9);
 }
 form p {
