@@ -25,9 +25,10 @@
         <div id="login-box">
             <img id="login-box-icon" src="{% static 'images/blog.jpeg' %}" alt="">
             <h1 id="login-text">Login</h1>
-            <form id="signin-form" >
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+            <form id="signin-form" action="signin" method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
                 <button id="login-button">Login</button>
                 <p class="login-inst"><a href="#">Forget Password?</a></p>
                 <p class="login-inst"><a href="#">Need Account?</a></p>

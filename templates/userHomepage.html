@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/userHomepage.css' %}">
+    <title>Blogging House</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 id="site-title">Blogging House</h1>
+            <ul id="navbar-list">
+                <li class="navbar-links" id="login">{% block content %}
+                        {% if user.is_authenticated %}
+                        Logged in as {{ user.username }}
+                 </li>
+                <li class="navbar-links">  <a href="#"> <img src="{% static 'images/newsfeed.png' %}"></a></li>
+                <li class="navbar-links">  <a href="addpost"> <img src="{% static 'images/plus.png' %}"></a></li>
+                <li class="navbar-links"> <a href="#"> <img src="{% static 'images/profile.png' %}" alt=""></a></li>
+                <li class="navbar-links"><a href="signout"> <img src="{% static 'images/logout.png' %}" alt=""></a></li>
+                {% else %}
+                        Welcome, new user. Please log in.
+                {% endif %} {% endblock %} 
+                <li id="contact-us"><button>Contact us</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+</body>
+</html>
