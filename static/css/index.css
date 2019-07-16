@@ -56,14 +56,14 @@ header{
     font-size: 20px;
 }
 
-#navbar-list li:hover{
+/* #navbar-list li:hover{
     padding: 16px;
     border-bottom: 1px rgb(202, 227, 248) solid;
     display: inline;
     color: rgb(202, 227, 248);
     font-size: 20px;
     cursor: pointer;
-}
+} */
 
 #navbar-list li button{
     padding: 8px 16px;
@@ -72,13 +72,13 @@ header{
     color: aliceblue;
     cursor: pointer;
 }
-#navbar-list li button:hover{
+/* #navbar-list li button:hover{
     padding: 8px 16px;
     border-radius: 40px;
     background:rgba(12, 12, 243,0.7);
     color: aliceblue;
     cursor: pointer;
-}
+} */
 
 .container{
     width: 100%;

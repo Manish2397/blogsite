@@ -22,10 +22,37 @@
     </header>
     <div class="container" style="background-image: url({% static 'images/addpostbg.jpg' %})">
         <div>
-            <form action="post">
-                <textarea name="blog" id="blog" cols="80" rows="20" autofocus >
+            <form action="submitpost" method="POST">
+                {% csrf_token %}
+                 <div id="tags"> <p style="font-size: 24px; color:aliceblue; border-bottom: 1px #fff solid; ">Add tags to your blog:</p>
+                    <input class="tags" type="checkbox" name="science">  Science <br>
+                    <input class="tags" type="checkbox" name="maths">  Maths <br>
+                    <input class="tags" type="checkbox" name="history">  History <br>
+                    <input class="tags" type="checkbox" name="programming">  Programming <br>
+                    <input class="tags" type="checkbox" name="cs">  Computer Science <br>
+                    <input class="tags" type="checkbox" name="cpp">  c++/java/python <br>
+                    <input class="tags" type="checkbox" name="ml">  Machine Learning <br>
+                    <input class="tags" type="checkbox" name="iot">  Internet of Things <br>
+                    <input class="tags" type="checkbox" name="robots">  Robots <br>
+                    <input class="tags" type="checkbox" name="space">  Space <br>
+                    <input class="tags" type="checkbox" name="lit">  Literature <br>
+                    <input class="tags" type="checkbox" name="app">  App Development <br>
+                    <input class="tags" type="checkbox" name="pol">  Political <br>
+                    <input class="tags" type="checkbox" name="sports">  Sports <br>
+                    <input class="tags" type="checkbox" name="cric">  Cricket <br>
+                    <input class="tags" type="checkbox" name="bollywood">  Bollywood <br>
+                    <input class="tags" type="checkbox" name="hollywood">  Hollywood <br>
+                    <input class="tags" type="checkbox" name="tv">  TV <br>
+                    <input class="tags" type="checkbox" name="life">  Life <br>
+                </div>
+                <div class="visibility" id="visibility" ><p style="font-size: 24px; color:aliceblue; border-bottom: 1px #fff solid; ">Keep your Blog as:</p> <br>
+                    <input class="visibility" type="radio" name="visibility" value="private">Private <br>
+                    <input class="visibility" type="radio" name="visibility" checked value="public">Public <br>
+                </div>
+                <input type="text" name="title" placeholder="Enter Title" id="blog-title">
+                <textarea name="blog" id="blog" cols="80" rows="15" autofocus style="background: #f7ebeb" >
                     </textarea>
-                <button type="submit">Add Post</button>
+                <button id="submit-button" type="submit">Add Post</button>
 
                 
             </form>
