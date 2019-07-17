@@ -10,7 +10,10 @@ def giveBool(value):
         return False
 # Create your views here.
 def userHomepage(request):
-    return render(request,'userHomepage.html')
+    blogs = blog.objects.all().filter(public=1)
+
+
+    return render(request,'userHomepage.html',{'blogs':blogs})
 
 def addpost(request):
     return render(request,'addpost.html')
@@ -63,3 +66,8 @@ def submitpost(request):
     
     
     return render(request,'addpost.html')
+
+
+def profile(request):
+    blogs = blog.objects.all().filter(user=request.user.username)
+    return render(request,'profile.html',{'blogs':blogs})

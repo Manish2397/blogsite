@@ -67,18 +67,23 @@ header{
     color: aliceblue;
     cursor: pointer;
 }
-.blogs-container{
-    position: absolute;
-    
-    background: #f4f4f4;
-}
-.main-container{
-    position: absolute;
-    width: 100%;
-    min-height:1000px;
+
+.user-info{
+    min-width: 600px;
+    min-height: 100px;
+    background: rgb(235, 111, 111);
     margin-top: 100px;
-    position: inherit;
-    background-size: cover;
+    margin-left:0px;
+    padding: 8px;
+    padding-left: 30%;
+}
+.user-info h1{
+    padding: 8px;
+    
+}
+.user-info h3{
+    padding: 8px;
+    
 }
 
 .blogs{
@@ -115,6 +120,10 @@ header{
     padding: 2px;
     padding-top: 6px;
 }
-/* .blogs-container{
-    position: absolute;
-} */
+.history h1{
+    margin-top: 100px;
+    text-align: center;
+    padding: 16px;
+    font-size: 24px;
+    background: rgb(81, 129, 233)
+}

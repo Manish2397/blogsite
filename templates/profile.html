@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <title>Blogging House {% if user.is_authenticated %}
+            -{{ user.username }}
+        {% endif %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+                <h1 id="site-title">Blogging House</h1>
+                <ul id="navbar-list">
+                    <li class="navbar-links" id="login">{% block content %}
+                            {% if user.is_authenticated %}
+                            Logged in as {{ user.username }}
+                        </li>
+                    <li class="navbar-links">  <a href="homepage"> <img src="{% static 'images/newsfeed.png' %}"></a></li>
+                    <li class="navbar-links">  <a href="addpost"> <img src="{% static 'images/plus.png' %}"></a></li>
+                    <li class="navbar-links"> <a href="profile"> <img src="{% static 'images/profile.png' %}"></a></li>
+                    <li class="navbar-links"><a href="signout"> <img src="{% static 'images/logout.png' %}" alt=""></a></li>
+                    {% else %}
+                            Welcome, new user. Please log in.
+                    {% endif %} {% endblock %} 
+                    <li id="contact-us"><button>Contact us</button></li>
+                </ul>
+            </nav>
+    </header>
+    <div class="main">
+            {% if user.is_authenticated %}
+        <div class="user-info">
+            <h1>Username : {{user.username}}</h1>
+            <h3>Name : {{user.get_full_name}}</h3>
+            <h3>Email : {{user.email}}</h3>
+            
+        </div>
+        <div class="history">
+                <h1>History</h1>
+                {% for blog in blogs %}
+                
+                <div class="blogs">
+                    <div class="blog-info">
+                        <p class="username">{{blog.user}}</p>
+                        <p class="visibility">
+                            {% if blog.public == True %}
+                            Visibility : Public
+                            {% else %}
+                            Visibility : Private
+                            {% endif %}
+                        </p>
+                        
+                        <p> <h2 class="title">{{blog.title}}</h2></p>
+                    </div>
+                    <div class="blog-content">
+                        <p>
+                            {{blog.blog|linebreaks}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div><h1 style="text-align: center; margin-top: 400px; font-size:30px; ">Please Login First</h1></div>
+        {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>

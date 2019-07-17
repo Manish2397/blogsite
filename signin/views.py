@@ -18,3 +18,4 @@ def signin(request):
 
 def signup(request):
     return redirect('/signup')
+
