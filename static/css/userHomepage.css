@@ -9,6 +9,7 @@
 }
 
 header{
+    z-index:2;
     padding: 16px;
     background: #24252a;
     position:fixed;
@@ -82,6 +83,7 @@ header{
 }
 
 .blogs{
+    overflow:hidden;
     border: black 2px solid;
     width:800px;
     min-height: 300px;
@@ -118,3 +120,14 @@ header{
 /* .blogs-container{
     position: absolute;
 } */
+
+.blogimg{
+  margin:0px;
+  width:100%;
+  z-index:0;
+
+
+
+
+
+}

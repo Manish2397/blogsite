@@ -44,6 +44,9 @@
                     <p> <h2 class="title">{{blog.title}}</h2></p>
                 </div>
                 <div class="blog-content">
+                    {% if blog.image %}
+                    <img class="blogimg" src="{{ blog.image.url }}">
+                    {% endif %}
                     <p>
                         {{blog.blog|linebreaks}}
                     </p>

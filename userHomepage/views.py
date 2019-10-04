@@ -71,3 +71,5 @@ def submitpost(request):
 def profile(request):
     blogs = blog.objects.all().filter(user=request.user.username)
     return render(request,'profile.html',{'blogs':blogs})
+def passwordReset(request):
+    return render(request,'passwordResetForm.html')
