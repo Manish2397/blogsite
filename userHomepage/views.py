@@ -46,6 +46,7 @@ def submitpost(request):
     mtv = giveBool(request.POST.get('tv'))
     mlife = giveBool(request.POST.get('life'))
     visibility = request.POST.get('visibility')
+    mimage = request.FILES['image']
     if(visibility=='public'):
         v1=True
         v2=False
@@ -56,7 +57,7 @@ def submitpost(request):
     new_blog = blog(user=muser,blog=mblog,title=mtitle,Science=mscience,Math=mmaths,
     History=mhistory,Programming=mprogramming,cs=mcs,cpp=mcpp,ml=mml,iot=miot,Robots=mrobots,
     Space=mspace,Literature=mlit,appD=mappD,Political=mpol,Sports=msports,Cricket=mcric,
-    Bollywood=mbollywood,Hollywood=mhollywood,TV=mtv,Life=mlife,public=v1,private=v2)
+    Bollywood=mbollywood,Hollywood=mhollywood,TV=mtv,Life=mlife,public=v1,private=v2,image=mimage)
 
     new_blog.save()
     
@@ -69,7 +70,7 @@ def submitpost(request):
 
 
 def profile(request):
-    blogs = blog.objects.all().filter(user=request.user.username)
+    blogs = blog.objects.all().filter(user = request.user.username)
     return render(request,'profile.html',{'blogs':blogs})
 def passwordReset(request):
     return render(request,'passwordResetForm.html')

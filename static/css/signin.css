@@ -9,6 +9,7 @@
 }
 
 header{
+    z-index:1;
     padding: 16px;
     background: #24252a;
     position:fixed;

@@ -14,22 +14,14 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '-llbpzfz3)*=ypw3g47&ecobn366h#2m6zi77b2*$jdg-5$p(t'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
-
-
 # Application definition
-
 INSTALLED_APPS = [
     'userHomepage.apps.UserhomepageConfig',
     'signin.apps.SigninConfig',
@@ -128,6 +120,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-# my_project/settings.py
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+

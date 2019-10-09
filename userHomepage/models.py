@@ -7,6 +7,7 @@ class blog(models.Model):
     blog = models.TextField(max_length=2000)
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to='images/',null=True,blank=True)
+    date = models.DateTimeField(auto_now_add=True)
     Science = models.BooleanField()
     Math = models.BooleanField()
     History =models.BooleanField()
