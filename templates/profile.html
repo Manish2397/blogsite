@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <title>Blogging House {% if user.is_authenticated %}
-            -{{ user.username }}
+            {{ user.username }}
         {% endif %}</title>
 </head>
 <body>
@@ -39,6 +39,31 @@
             <h3>Email : {{user.email}}</h3>
             
         </div>
+        <form action="profile" method="POST">
+                {% csrf_token %}
+                 <div id="tags"> <p style="font-size: 24px; color:aliceblue; border-bottom: 1px #fff solid; ">Select favourite tags:</p>
+                    <input class="tags" type="checkbox" {% if userP.Science %} checked{% endif %} name="science">  Science <br>
+                    <input class="tags" type="checkbox" {% if userP.Math %} checked{% endif %} name="maths">  Maths <br>
+                    <input class="tags" type="checkbox" {% if userP.History %} checked{% endif %} name="history">  History <br>
+                    <input class="tags" type="checkbox" {% if userP.Programming %} checked{% endif %}  name="programming">  Programming <br>
+                    <input class="tags" type="checkbox" {% if userP.cs %} checked{% endif %}  name="cs">  Computer Science <br>
+                    <input class="tags" type="checkbox" {% if userP.cpp %} checked{% endif %}  name="cpp">  c++/java/python <br>
+                    <input class="tags" type="checkbox" {% if userP.ml %} checked{% endif %}  name="ml">  Machine Learning <br>
+                    <input class="tags" type="checkbox" {% if userP.iot %} checked{% endif %}  name="iot">  Internet of Things <br>
+                    <input class="tags" type="checkbox" {% if userP.Robots %} checked{% endif %}  name="robots">  Robots <br>
+                    <input class="tags" type="checkbox" {% if userP.Space %} checked{% endif %}  name="space">  Space <br>
+                    <input class="tags" type="checkbox" {% if userP.Literature %} checked{% endif %}  name="lit">  Literature <br>
+                    <input class="tags" type="checkbox" {% if userP.appD %} checked{% endif %}  name="app">  App Development <br>
+                    <input class="tags" type="checkbox" {% if userP.Political %} checked{% endif %}  name="pol">  Political <br>
+                    <input class="tags" type="checkbox" {% if userP.Sports %} checked{% endif %}  name="sports">  Sports <br>
+                    <input class="tags" type="checkbox" {% if userP.Cricket %} checked{% endif %}  name="cric">  Cricket <br>
+                    <input class="tags" type="checkbox" {% if userP.Bollywood %} checked{% endif %}  name="bollywood">  Bollywood <br>
+                    <input class="tags" type="checkbox" {% if userP.Hollywood %} checked{% endif %}  name="hollywood">  Hollywood <br>
+                    <input class="tags" type="checkbox" {% if userP.TV %} checked{% endif %}  name="tv">  TV <br>
+                    <input class="tags" type="checkbox" {% if userP.Life %} checked{% endif %}  name="life">  Life <br>
+                     <button id="submit-button" type="submit">Save</button>
+                </div>
+            </form>
         <div class="history">
                 <h1>History</h1>
                 {% for blog in blogs %}
@@ -57,11 +82,15 @@
                         <p> <h2 class="title">{{blog.title}}</h2></p>
                     </div>
                     <div class="blog-content">
+                        {% if blog.image %}
+                    <img class="blogimg" src="{{ blog.image.url }}">
+                    {% endif %}
                         <p>
                             {{blog.blog|linebreaks}}
                         </p>
                     </div>
                 </div>
+
                 {% endfor %}
                 {% else %}
                 <div><h1 style="text-align: center; margin-top: 400px; font-size:30px; ">Please Login First</h1></div>

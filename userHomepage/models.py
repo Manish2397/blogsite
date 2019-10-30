@@ -1,7 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
-
 class blog(models.Model):
     user = models.CharField(max_length=30)
     blog = models.TextField(max_length=2000)
@@ -29,4 +28,26 @@ class blog(models.Model):
     Life=models.BooleanField()
     public = models.BooleanField()
     private = models.BooleanField()
-    
+
+class UserPreference(models.Model):
+
+    user = models.CharField(max_length=30)
+    Science = models.BooleanField(default=0)
+    Math = models.BooleanField(default=0)
+    History = models.BooleanField(default=0)
+    Programming = models.BooleanField(default=0)
+    cs = models.BooleanField(default=0)
+    cpp = models.BooleanField(default=0)
+    ml = models.BooleanField(default=0)
+    iot = models.BooleanField(default=0)
+    Robots = models.BooleanField(default=0)
+    Space = models.BooleanField(default=0)
+    Literature = models.BooleanField(default=0)
+    appD = models.BooleanField(default=0)
+    Political = models.BooleanField(default=0)
+    Sports = models.BooleanField(default=0)
+    Cricket = models.BooleanField(default=0)
+    Bollywood = models.BooleanField(default=0)
+    Hollywood = models.BooleanField(default=0)
+    TV = models.BooleanField(default=0)
+    Life = models.BooleanField(default=0)

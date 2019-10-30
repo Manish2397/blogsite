@@ -121,9 +121,32 @@ header{
     padding-top: 6px;
 }
 .history h1{
-    margin-top: 100px;
+    margin-top: 700px;
     text-align: center;
     padding: 16px;
     font-size: 24px;
     background: rgb(81, 129, 233)
+}
+div #tags{
+    float: left;
+    width:300px;
+    min-height: 300px;
+    margin-top: 110px;
+    background: rgba(139, 167, 184, 0.568);
+    margin: 40px;
+    margin-top: 10px;
+    margin-left: 60px;
+    padding: 8px;
+    text-decoration: none;
+    font-size:24px;
+}
+.blogimg{
+  margin:0px;
+  width:100%;
+  z-index:0;
+
+
+
+
+
 }
